@@ -33,6 +33,7 @@ class Animation:
         name=None,
         remover=False,  # remove a mobject from the screen?
         suspend_mobject_updating=True,
+        **kwargs
     ):
         self._typecheck_input(mobject)
         self.run_time = run_time
@@ -43,6 +44,13 @@ class Animation:
         self.lag_ratio = lag_ratio
         self.starting_mobject = None
         self.mobject = mobject
+        if kwargs:
+            logger.debug("Animation received extra kwargs: ", kwargs)
+
+        if hasattr(self, "CONFIG"):
+            logger.error(
+                "CONFIG has been removed from ManimCommunity. Please use keyword arguments instead."
+            )
 
     def _typecheck_input(self, mobject):
         if mobject is None:

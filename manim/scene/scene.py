@@ -83,6 +83,8 @@ class Scene(Container):
             random.seed(self.random_seed)
             np.random.seed(self.random_seed)
 
+        Container.__init__(self, **kwargs)
+
     @property
     def camera(self):
         return self.renderer.camera

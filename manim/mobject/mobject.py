@@ -56,8 +56,7 @@ class Mobject(Container):
         self.reset_points()
         self.generate_points()
         self.init_colors()
-        if kwargs:
-            print("got extra kwargs: ", kwargs)
+        Container.__init__(self, **kwargs)
 
     def __repr__(self):
         return str(self.name)

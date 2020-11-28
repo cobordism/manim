@@ -8,6 +8,7 @@ __all__ = ["Container"]
 
 
 from abc import ABC, abstractmethod
+from . import logger
 
 
 class Container(ABC):
@@ -21,7 +22,13 @@ class Container(ABC):
     """
 
     def __init__(self, **kwargs):
-        pass
+        if kwargs:
+            logger.debug("Container received extra kwargs: ", kwargs)
+
+        if hasattr(self, "CONFIG"):
+            logger.error(
+                "CONFIG has been removed from ManimCommunity. Please use keyword arguments instead."
+            )
 
     @abstractmethod
     def add(self, *items):
