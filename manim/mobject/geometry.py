@@ -1256,9 +1256,9 @@ class ArrowTip(VMobject):
         >>> class MyCustomArrowTip(ArrowTip, RegularPolygon):
         ...     def __init__(self, **kwargs):
         ...         RegularPolygon.__init__(self, n=5, **kwargs)
-        ...         self.length = 0.35
-        ...         self.set_width(self.length)
-        ...         self.set_height(self.length, stretch=True)
+        ...         length = 0.35
+        ...         self.set_width(length)
+        ...         self.set_height(length, stretch=True)
         >>> arr = Arrow(np.array([-2, -2, 0]), np.array([2, 2, 0]),
         ...             tip_shape=MyCustomArrowTip)
         >>> isinstance(arr.tip, RegularPolygon)
