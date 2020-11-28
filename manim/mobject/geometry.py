@@ -421,7 +421,6 @@ class Circle(Arc):
 
 
 class Dot(Circle):
-
     def __init__(
         self,
         point=ORIGIN,
@@ -513,6 +512,7 @@ class LabeledDot(Dot):
     def __init__(self, label, radius=None, **kwargs) -> None:
         if isinstance(label, str):
             from manim import MathTex
+
             rendered_label = MathTex(label, color=BLACK)
         else:
             rendered_label = label
@@ -527,7 +527,6 @@ class LabeledDot(Dot):
 
 
 class Ellipse(Circle):
-
     def __init__(self, width=2, height=1, **kwargs):
         Circle.__init__(self, **kwargs)
         self.width = width
@@ -537,7 +536,6 @@ class Ellipse(Circle):
 
 
 class AnnularSector(Arc):
-
     def __init__(
         self,
         inner_radius=1,
@@ -581,15 +579,11 @@ class AnnularSector(Arc):
 class Sector(AnnularSector):
     def __init__(self, outer_radius=1, inner_radius=0, **kwargs):
         AnnularSector.__init__(
-            self,
-            inner_radius=inner_radius,
-            outer_radius=outer_radius,
-            **kwargs
+            self, inner_radius=inner_radius, outer_radius=outer_radius, **kwargs
         )
 
 
 class Annulus(Circle):
-
     def __init__(
         self,
         inner_radius=1,
@@ -715,7 +709,6 @@ class Line(TipableVMobject):
 
 
 class DashedLine(Line):
-
     def __init__(
         self,
         *args,
@@ -766,7 +759,6 @@ class DashedLine(Line):
 
 
 class TangentLine(Line):
-
     def __init__(self, vmob, alpha, length=1, d_alpha=1e-6, **kwargs):
         self.length = length
         self.d_alpha = d_alpha
@@ -780,7 +772,6 @@ class TangentLine(Line):
 
 
 class Elbow(VMobject):
-
     def __init__(self, width=0.2, angle=0, **kwargs):
         self.width = width
         self.angle = angle
@@ -791,7 +782,6 @@ class Elbow(VMobject):
 
 
 class Arrow(Line):
-
     def __init__(
         self,
         *args,
@@ -884,7 +874,6 @@ class Arrow(Line):
 
 
 class Vector(Arrow):
-
     def __init__(self, direction=RIGHT, buff=0, **kwargs):
         self.buff = buff
         if len(direction) == 2:
@@ -951,7 +940,6 @@ class Polygon(VMobject):
 
 
 class RegularPolygon(Polygon):
-
     def __init__(self, n=6, start_angle=None, **kwargs):
         self.start_angle = start_angle
         if self.start_angle is None:
