@@ -225,10 +225,9 @@ class SingleStringMathTex(SVGMobject):
         self.height = height
         self.organize_left_to_right = organize_left_to_right
         self.tex_environment = tex_environment
+        if tex_template is None:
+            tex_template = config["tex_template"]
         self.tex_template = tex_template
-
-        if self.tex_template is None:
-            self.tex_template = kwargs.get("tex_template", config["tex_template"])
 
         assert isinstance(tex_string, str)
         self.tex_string = tex_string
@@ -370,6 +369,7 @@ class MathTex(SingleStringMathTex):
         tex_environment="align*",
         **kwargs,
     ):
+        self.tex_template = kwargs.pop("tex_template", config["tex_template"])
         self.arg_separator = arg_separator
         self.substrings_to_isolate = (
             [] if substrings_to_isolate is None else substrings_to_isolate
@@ -384,6 +384,7 @@ class MathTex(SingleStringMathTex):
             self,
             self.arg_separator.join(tex_strings),
             tex_environment=self.tex_environment,
+            tex_template=self.tex_template,
             **kwargs,
         )
         self.break_up_by_substrings()
@@ -416,7 +417,8 @@ class MathTex(SingleStringMathTex):
         for tex_string in self.tex_strings:
             sub_tex_mob = SingleStringMathTex(
                 tex_string,
-                tex_environment=self.tex_environment,  # TODO check which kwargs are needed. tex template maybe?
+                tex_environment=self.tex_environment,
+                tex_template=self.tex_template,
             )
             num_submobs = len(sub_tex_mob.submobjects)
             new_index = curr_index + num_submobs
