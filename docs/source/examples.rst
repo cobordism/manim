@@ -408,15 +408,18 @@ Special Camera Settings
 
     class MovingZoomedSceneAround(ZoomedScene):
     # contributed by TheoremofBeethoven, www.youtube.com/c/TheoremofBeethoven
-        CONFIG = {
-            "zoom_factor": 0.3,
-            "zoomed_display_height": 1,
-            "zoomed_display_width": 6,
-            "image_frame_stroke_width": 20,
-            "zoomed_camera_config": {
-                "default_frame_stroke_width": 3,
-            },
-        }
+        def __init__(self, **kwargs):
+            ZoomedScene.__init__(
+                self,
+                zoom_factor=0.3,
+                zoomed_display_height=1,
+                zoomed_display_width=6,
+                image_frame_stroke_width=20,
+                zoomed_camera_config={
+                    "default_frame_stroke_width": 3,
+                    },
+                **kwargs
+            )
 
         def construct(self):
             dot = Dot().shift(UL * 2)
