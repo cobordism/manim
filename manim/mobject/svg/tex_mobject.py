@@ -340,7 +340,7 @@ class SingleStringMathTex(SVGMobject):
 
 
 class MathTex(SingleStringMathTex):
-    """A string compiled with LaTeX in math mode.
+    r"""A string compiled with LaTeX in math mode.
 
     Examples
     --------
@@ -371,7 +371,9 @@ class MathTex(SingleStringMathTex):
         **kwargs,
     ):
         self.arg_separator = arg_separator
-        self.substrings_to_isolate = [] if substrings_to_isolate is None else substrings_to_isolate
+        self.substrings_to_isolate = (
+            [] if substrings_to_isolate is None else substrings_to_isolate
+        )
         self.tex_to_color_map = tex_to_color_map
         if self.tex_to_color_map is None:
             self.tex_to_color_map = {}
@@ -506,7 +508,6 @@ class Tex(MathTex):
 
 
 class BulletedList(Tex):
-
     def __init__(
         self,
         *items,
@@ -542,7 +543,6 @@ class BulletedList(Tex):
 
 
 class Title(Tex):
-
     def __init__(
         self,
         *text_parts,
