@@ -17,7 +17,6 @@ __all__ = [
 
 
 from ..animation.animation import Animation
-from ..animation.animation import DEFAULT_ANIMATION_LAG_RATIO
 from ..animation.transform import Transform
 from ..constants import DOWN
 from ..mobject.types.vectorized_mobject import VMobject
@@ -183,4 +182,4 @@ class VFadeOut(VFadeIn):
 
 class VFadeInThenOut(VFadeIn):
     def __init__(self, mobject, remover=True, rate_func=there_and_back, **kwargs):
-        super().__init__(mobject, remover=remover, rate_func=there_and_back, **kwargs)
+        super().__init__(mobject, remover=remover, rate_func=rate_func, **kwargs)
