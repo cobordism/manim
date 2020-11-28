@@ -45,7 +45,7 @@ class Animation:
         self.starting_mobject = None
         self.mobject = mobject
         if kwargs:
-            logger.debug("Animation received extra kwargs: ", kwargs)
+            logger.debug("Animation received extra kwargs: %s", kwargs)
 
         if hasattr(self, "CONFIG"):
             logger.error(

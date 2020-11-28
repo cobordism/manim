@@ -23,7 +23,7 @@ class Container(ABC):
 
     def __init__(self, **kwargs):
         if kwargs:
-            logger.debug("Container received extra kwargs: ", kwargs)
+            logger.debug("Container received extra kwargs: %s", kwargs)
 
         if hasattr(self, "CONFIG"):
             logger.error(
