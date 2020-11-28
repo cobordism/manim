@@ -68,11 +68,10 @@ class ImageMobject(AbstractImageMobject):
     """Displays an Image from a numpy array or a file.
 
     Parameters
-        ----------
-        scale_to_resolution : :class:`int`
-            At this resolution the image is placed pixel by pixel onto the screen, so it will look the sharpest and best.
-            This is a custom parameter of ImageMobject so that rendering a scene with e.g. the ``--quality low`` or ``--quality medium`` flag for faster rendering won't effect the position of the image on the screen.
-
+    ----------
+    scale_to_resolution : :class:`int`
+        At this resolution the image is placed pixel by pixel onto the screen, so it will look the sharpest and best.
+        This is a custom parameter of ImageMobject so that rendering a scene with e.g. the ``--quality low`` or ``--quality medium`` flag for faster rendering won't effect the position of the image on the screen.
 
 
     Example
