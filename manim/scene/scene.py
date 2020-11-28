@@ -57,12 +57,12 @@ class Scene(Container):
     """
 
     def __init__(
-            self,
-            renderer=None,
-            camera_class=Camera,
-            always_update_mobjects=False,
-            random_seed=0,
-            **kwargs
+        self,
+        renderer=None,
+        camera_class=Camera,
+        always_update_mobjects=False,
+        random_seed=0,
+        **kwargs,
     ):
         self.camera_class = camera_class
         self.always_update_mobjects = always_update_mobjects

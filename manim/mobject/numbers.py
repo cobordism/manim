@@ -192,8 +192,10 @@ class DecimalNumber(VMobject):
 
 
 class Integer(DecimalNumber):
-    def __init__(self, num_decimal_places=0, **kwargs):
-        DecimalNumber.__init__(self, num_decimal_places=num_decimal_places, **kwargs)
+    def __init__(self, number=0, num_decimal_places=0, **kwargs):
+        DecimalNumber.__init__(
+            self, number=number, num_decimal_places=num_decimal_places, **kwargs
+        )
 
     def get_value(self):
         return int(np.round(super().get_value()))

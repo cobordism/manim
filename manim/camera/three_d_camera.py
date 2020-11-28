@@ -22,19 +22,18 @@ from ..utils.family import extract_mobject_family_members
 
 
 class ThreeDCamera(Camera):
-
     def __init__(
-            self,
-            distance=20.0,
-            shading_factor=0.2,
-            default_distance=5.0,
-            light_source_start_point=9*DOWN + 7*LEFT + 10*OUT,
-            should_apply_shading=True,
-            exponential_projection=False,
-            phi=0,
-            theta=-90*DEGREES,
-            gamma=0,
-            **kwargs
+        self,
+        distance=20.0,
+        shading_factor=0.2,
+        default_distance=5.0,
+        light_source_start_point=9 * DOWN + 7 * LEFT + 10 * OUT,
+        should_apply_shading=True,
+        exponential_projection=False,
+        phi=0,
+        theta=-90 * DEGREES,
+        gamma=0,
+        **kwargs
     ):
         """Initializes the ThreeDCamera
 

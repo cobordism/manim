@@ -72,39 +72,38 @@ from ..utils.space_ops import angle_of_vector
 
 
 class GraphScene(Scene):
-
     def __init__(
-            self,
-            x_min=-1,
-            x_max=10,
-            x_axis_width=9,
-            x_leftmost_tick=None,  # Change if different from x_min
-            x_labeled_nums=None,
-            x_axis_label="$x$",
-            y_min=-1,
-            y_max=10,
-            y_axis_height=6,
-            y_bottom_tick=None,  # Change if different from y_min
-            y_labeled_nums=None,
-            y_axis_label="$y$",
-            axes_color=GREY,
-            graph_origin=2.5 * DOWN + 4 * LEFT,
-            exclude_zero_label=True,
-            default_graph_colors=[BLUE, GREEN, YELLOW],
-            default_derivative_color=GREEN,
-            default_input_color=YELLOW,
-            default_riemann_start_color=BLUE,
-            default_riemann_end_color=GREEN,
-            area_opacity=0.8,
-            num_rects=50,
-            include_tip=False,  # add tip at the end of the axes
-            x_axis_visibility=True,  # show or hide the x axis
-            y_axis_visibility=True,  # show or hide the y axis
-            x_label_position=UP + RIGHT,  # where to place the label of the x axis
-            y_label_position=UP + RIGHT,  # where to place the label of the y axis
-            x_axis_config={},
-            y_axis_config={},
-            **kwargs
+        self,
+        x_min=-1,
+        x_max=10,
+        x_axis_width=9,
+        x_leftmost_tick=None,  # Change if different from x_min
+        x_labeled_nums=None,
+        x_axis_label="$x$",
+        y_min=-1,
+        y_max=10,
+        y_axis_height=6,
+        y_bottom_tick=None,  # Change if different from y_min
+        y_labeled_nums=None,
+        y_axis_label="$y$",
+        axes_color=GREY,
+        graph_origin=2.5 * DOWN + 4 * LEFT,
+        exclude_zero_label=True,
+        default_graph_colors=[BLUE, GREEN, YELLOW],
+        default_derivative_color=GREEN,
+        default_input_color=YELLOW,
+        default_riemann_start_color=BLUE,
+        default_riemann_end_color=GREEN,
+        area_opacity=0.8,
+        num_rects=50,
+        include_tip=False,  # add tip at the end of the axes
+        x_axis_visibility=True,  # show or hide the x axis
+        y_axis_visibility=True,  # show or hide the y axis
+        x_label_position=UP + RIGHT,  # where to place the label of the x axis
+        y_label_position=UP + RIGHT,  # where to place the label of the y axis
+        x_axis_config={},
+        y_axis_config={},
+        **kwargs,
     ):
         self.x_min = x_min
         self.x_max = x_max

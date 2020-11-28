@@ -42,7 +42,6 @@ from ...utils.space_ops import shoelace_direction
 
 
 class VMobject(Mobject):
-
     def __init__(
         self,
         fill_color=None,
@@ -1353,7 +1352,6 @@ class VDict(VMobject):
 
 
 class VectorizedPoint(VMobject):
-
     def __init__(
         self,
         location=ORIGIN,
@@ -1400,7 +1398,6 @@ class CurvesAsSubmobjects(VGroup):
 
 
 class DashedVMobject(VMobject):
-
     def __init__(
         self, vmobject, num_dashes=15, positive_space_ratio=0.5, color=WHITE, **kwargs
     ):

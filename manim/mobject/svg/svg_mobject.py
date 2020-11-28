@@ -89,10 +89,7 @@ class SVGMobject(VMobject):
         self.width = width
         self.unpack_groups = unpack_groups
         VMobject.__init__(
-            self,
-            fill_opacity=fill_opacity,
-            stroke_width=stroke_width,
-            **kwargs
+            self, fill_opacity=fill_opacity, stroke_width=stroke_width, **kwargs
         )
         self.move_into_position()
 

@@ -6,7 +6,6 @@ from ..utils.GraphicalUnitTester import GraphicalUnitTester
 
 
 class AxesTest(GraphScene):
-
     def construct(self):
         self.x_min = -5
         self.x_max = 5
