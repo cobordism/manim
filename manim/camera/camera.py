@@ -36,7 +36,7 @@ class Camera(object):
     This is the object which takes care of what exactly is displayed
     on screen at any given moment.
 
-    Some important CONFIG values and local variables to note are:
+    Some important configuration values and local variables to note are:
 
     background_image : :class:`str`, optional
         The path to an image that should be the background image.

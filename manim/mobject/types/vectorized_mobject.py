@@ -1039,7 +1039,7 @@ class VDict(VMobject):
             especially when there are a lot of mobjects in the
             :class:`VDict`. Defaults to False.
     kwargs : Any
-            Other arguments to be passed to `Mobject` or the CONFIG.
+            Other arguments to be passed to `Mobject`.
 
     Attributes
     ----------

@@ -47,14 +47,6 @@ class Brace(MathTex):
 
     """
 
-    # CONFIG = {
-    #     "buff": 0.2,
-    #     "width_multiplier": 2,
-    #     "max_num_quads": 15,
-    #     "min_num_quads": 0,
-    #     "background_stroke_width": 0,
-    # }
-
     def __init__(
         self,
         mobject,

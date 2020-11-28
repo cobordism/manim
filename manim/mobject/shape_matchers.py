@@ -12,11 +12,6 @@ from ..utils.color import Color, YELLOW, BLACK, RED
 
 
 class SurroundingRectangle(Rectangle):
-    # CONFIG = {
-    #     "color": YELLOW,
-    #     "buff": SMALL_BUFF,
-    # }
-
     def __init__(self, mobject, color=YELLOW, buff=SMALL_BUFF, **kwargs):
         self.color = color
         self.buff = buff
@@ -27,14 +22,6 @@ class SurroundingRectangle(Rectangle):
 
 
 class BackgroundRectangle(SurroundingRectangle):
-    # CONFIG = {
-    #     "color": BLACK,
-    #     "stroke_width": 0,
-    #     "stroke_opacity": 0,
-    #     "fill_opacity": 0.75,
-    #     "buff": 0,
-    # }
-
     def __init__(
         self,
         mobject,
@@ -84,11 +71,6 @@ class BackgroundRectangle(SurroundingRectangle):
 
 
 class Cross(VGroup):
-    # CONFIG = {
-    #     "stroke_color": RED,
-    #     "stroke_width": 6,
-    # }
-
     def __init__(self, mobject, stroke_color=RED, stroke_width=6, **kwargs):
         self.stroke_color = stroke_color
         self.stroke_width = stroke_width
@@ -102,10 +84,6 @@ class Cross(VGroup):
 
 
 class Underline(Line):
-    # CONFIG = {
-    #     "buff": SMALL_BUFF,
-    # }
-
     def __init__(self, mobject, buff=SMALL_BUFF, **kwargs):
         super().__init__(LEFT, RIGHT, buff=buff, **kwargs)
         self.match_width(mobject)

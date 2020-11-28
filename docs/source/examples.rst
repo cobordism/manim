@@ -314,15 +314,16 @@ Plotting with Manim
     :ref_functions: GraphScene.setup_axes GraphScene.get_graph GraphScene.get_vertical_line_to_graph GraphScene.get_area
 
     class GraphAreaPlot(GraphScene):
-        CONFIG = {
-            "x_min" : 0,
-            "x_max" : 5,
-            "y_min" : 0,
-            "y_max" : 6,
-            "y_tick_frequency" : 1,
-            "x_tick_frequency" : 1,
-            "x_labeled_nums" : [0,2,3]
-        }
+        def __init__(self, **kwargs):
+            GraphScene.__init__(
+                self,
+                x_min=0,
+                x_max=5,
+                y_min=0,
+                y_max=6,
+                x_labeled_nums=[0,2,3],
+                **kwargs)
+        
         def construct(self):
             self.setup_axes()
             curve1 = self.get_graph(lambda x: 4 * x - x ** 2, x_min=0, x_max=4)
@@ -339,16 +340,18 @@ Plotting with Manim
     :ref_functions: GraphScene.setup_axes GraphScene.coords_to_point
 
     class HeatDiagramPlot(GraphScene):
-        CONFIG = {
-            "y_axis_label": r"T[$^\circ C$]",
-            "x_axis_label": r"$\Delta Q$",
-            "y_min": -8,
-            "y_max": 30,
-            "x_min": 0,
-            "x_max": 40,
-            "y_labeled_nums": np.arange(-5, 34, 5),
-            "x_labeled_nums": np.arange(0, 40, 5),
-        }
+        def __init__(self, **kwargs):
+            GraphScene.__init__(
+                self,
+                y_axis_label=r"T[$^\circ C$]",
+                x_axis_label=r"$\Delta Q$",
+                y_min=-8,
+                y_max=30,
+                x_min=0,
+                x_max=40,
+                y_labeled_nums=np.arange(-5, 34, 5),
+                x_labeled_nums=np.arange(0, 40, 5),
+                **kwargs)
 
         def construct(self):
             data = [20, 0, 0, -5]

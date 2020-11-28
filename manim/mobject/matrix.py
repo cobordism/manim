@@ -64,20 +64,6 @@ def vector_coordinate_label(vector_mob, integer_labels=True, n_dim=2, color=WHIT
 
 
 class Matrix(VMobject):
-    # CONFIG = {
-    #     "v_buff": 0.8,
-    #     "h_buff": 1.3,
-    #     "bracket_h_buff": MED_SMALL_BUFF,
-    #     "bracket_v_buff": MED_SMALL_BUFF,
-    #     "add_background_rectangles_to_entries": False,
-    #     "include_background_rectangle": False,
-    #     "element_to_mobject": MathTex,
-    #     "element_to_mobject_config": {},
-    #     "element_alignment_corner": DR,
-    #     "left_bracket": "\\big[",
-    #     "right_bracket": "\\big]",
-    # }
-
     def __init__(
         self,
         matrix,
@@ -207,11 +193,6 @@ class Matrix(VMobject):
 
 
 class DecimalMatrix(Matrix):
-    # CONFIG = {
-    #     "element_to_mobject": DecimalNumber,
-    #     "element_to_mobject_config": {"num_decimal_places": 1},
-    # }
-
     def __init__(
         self,
         element_to_mobject=DecimalNumber,
@@ -227,17 +208,11 @@ class DecimalMatrix(Matrix):
 
 
 class IntegerMatrix(Matrix):
-    # CONFIG = {
-    #     "element_to_mobject": Integer,
-    # }
     def __init__(self, element_to_mobject=Integer, **kwargs):
         Matrix.__init__(self, element_to_mobject=element_to_mobject, **kwargs)
 
 
 class MobjectMatrix(Matrix):
-    # CONFIG = {
-    #     "element_to_mobject": lambda m: m,
-    # }
     def __init__(self, element_to_mobject=lambda m: m, **kwargs):
         Matrix.__init__(self, element_to_mobject=element_to_mobject, **kwargs)
 

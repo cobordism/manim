@@ -18,11 +18,6 @@ class MappingCamera(Camera):
     between objects.
     """
 
-    # CONFIG = {
-    #     "mapping_func": lambda p: p,
-    #     "min_num_curves": 50,
-    #     "allow_object_intrusion": False,
-    # }
     def __init__(
         self,
         mapping_func=lambda p: p,

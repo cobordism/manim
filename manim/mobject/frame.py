@@ -15,8 +15,6 @@ from ..utils.color import BLACK
 
 
 class ScreenRectangle(Rectangle):
-    # CONFIG = {"aspect_ratio": 16.0 / 9.0, "height": 4}
-
     def __init__(self, aspect_ratio=16.0 / 9.0, height=4, **kwargs):
         self.aspect_ratio = aspect_ratio
         self.height = height
@@ -31,11 +29,6 @@ class FullScreenRectangle(ScreenRectangle):
 
 
 class FullScreenFadeRectangle(FullScreenRectangle):
-    # CONFIG = {
-    #     "stroke_width": 0,
-    #     "fill_color": BLACK,
-    #     "fill_opacity": 0.7,
-    # }
     def __init__(self, stroke_width=0, fill_color=BLACK, fill_opacity=0.7, **kwargs):
         FullScreenRectangle.__init__(
             self,
@@ -47,8 +40,6 @@ class FullScreenFadeRectangle(FullScreenRectangle):
 
 
 class PictureInPictureFrame(Rectangle):
-    # CONFIG = {"height": 3, "aspect_ratio": 16.0 / 9.0}
-
     def __init__(self, height=3, aspect_ratio=16.0 / 9.0, **kwargs):
         self.height = height
         self.aspect_ratio = aspect_ratio

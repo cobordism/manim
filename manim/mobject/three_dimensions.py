@@ -180,8 +180,6 @@ class Cube(VGroup):
 
 
 class Prism(Cube):
-    # CONFIG = {"dimensions": [3, 2, 1]}
-
     def __init__(self, dimensions=[3, 2, 1], **kwargs):
         self.dimensions = dimensions
         Cube.__init__(self, **kwargs)

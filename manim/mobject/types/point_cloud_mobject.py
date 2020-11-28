@@ -179,10 +179,6 @@ class PMobject(Mobject):
 
 # TODO, Make the two implementations bellow non-redundant
 class Mobject1D(PMobject):
-    # CONFIG = {
-    #     "density": DEFAULT_POINT_DENSITY_1D,
-    # }
-
     def __init__(self, density=DEFAULT_POINT_DENSITY_1D, **kwargs):
         self.density = density
         self.epsilon = 1.0 / self.density
@@ -200,10 +196,6 @@ class Mobject1D(PMobject):
 
 
 class Mobject2D(PMobject):
-    # CONFIG = {
-    #     "density": DEFAULT_POINT_DENSITY_2D,
-    # }
-
     def __init__(self, density=DEFAULT_POINT_DENSITY_2D, **kwargs):
         self.density = density
         self.epsilon = 1.0 / self.density
@@ -219,13 +211,6 @@ class PGroup(PMobject):
 
 
 class PointCloudDot(Mobject1D):
-    # CONFIG = {
-    #     "radius": 0.075,
-    #     "stroke_width": 2,
-    #     "density": DEFAULT_POINT_DENSITY_1D,
-    #     "color": YELLOW,
-    # }
-
     def __init__(
         self,
         center=ORIGIN,

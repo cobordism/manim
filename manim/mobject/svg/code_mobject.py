@@ -126,31 +126,12 @@ class Code(VGroup):
     """
 
     # tuples in the form (name, aliases, filetypes, mimetypes)
-    # 'language' of CONFIG is aliases or short names
+    # 'language' is aliases or short names
     # For more information about pygments.lexers visit https://pygments.org/docs/lexers/
     # from pygments.lexers import get_all_lexers
     # all_lexers = get_all_lexers()
     styles_list = list(get_all_styles())
     # For more information about pygments.styles visit https://pygments.org/docs/styles/
-    # CONFIG = {
-    #     "tab_width": 3,
-    #     "line_spacing": 0.3,
-    #     "scale_factor": 0.5,
-    #     "font": "Monospac821 BT",
-    #     "stroke_width": 0,
-    #     "margin": 0.3,
-    #     "indentation_chars": "    ",
-    #     "background": "rectangle",  # or window
-    #     "background_stroke_width": 1,
-    #     "background_stroke_color": WHITE,
-    #     "corner_radius": 0.2,
-    #     "insert_line_no": True,
-    #     "line_no_from": 1,
-    #     "line_no_buff": 0.4,
-    #     "style": "vim",
-    #     "language": None,
-    #     "generate_html_file": False,
-    # }
 
     def __init__(
         self,

@@ -134,30 +134,6 @@ class CairoText(SVGMobject):
 
     """
 
-    # CONFIG = {
-    #     # Mobject
-    #     "color": WHITE,
-    #     "height": None,
-    #     "width": None,
-    #     "fill_opacity": 1,
-    #     "stroke_width": 0,
-    #     "should_center": True,
-    #     "unpack_groups": True,
-    #     # Text
-    #     "font": "",
-    #     "gradient": None,
-    #     "line_spacing": -1,
-    #     "size": 1,
-    #     "slant": NORMAL,
-    #     "weight": NORMAL,
-    #     "t2c": {},
-    #     "t2f": {},
-    #     "t2g": {},
-    #     "t2s": {},
-    #     "t2w": {},
-    #     "tab_width": 4,
-    # }
-
     def __init__(
         self,
         text,
@@ -481,11 +457,6 @@ class Paragraph(VGroup):
 
     """
 
-    # CONFIG = {
-    #     "line_spacing": -1,
-    #     "alignment": None,
-    # }
-
     def __init__(self, *text, line_spacing=-1, alignment=None, **config):
         self.line_spacing = line_spacing
         self.alignment = alignment
@@ -745,14 +716,6 @@ class Text(SVGMobject):
         :meth:`remove_invisible_chars` to resolve this issue.
 
     """
-
-    # CONFIG = {
-    #     # Mobject
-    #     "height": None,
-    #     "width": None,
-    #     "should_center": True,
-    #     "unpack_groups": True,
-    # }
 
     def __init__(
         self,

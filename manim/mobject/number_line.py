@@ -212,16 +212,6 @@ class NumberLine(Line):
 
 
 class UnitInterval(NumberLine):
-    # CONFIG = {
-    #     "unit_size": 6,
-    #     "tick_frequency": 0.1,
-    #     "numbers_with_elongated_ticks": [0, 1],
-    #     "number_at_center": 0.5,
-    #     "decimal_number_config": {
-    #         "num_decimal_places": 1,
-    #     },
-    # }
-
     def __init__(
         self,
         unit_size=6,

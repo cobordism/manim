@@ -19,10 +19,6 @@ from ..utils.color import WHITE
 
 # TODO, think about how to incorporate perspective
 class CameraFrame(VGroup):
-    # CONFIG = {
-    #     "center": ORIGIN,
-    # }
-
     def __init__(self, center=ORIGIN, **kwargs):
         VGroup.__init__(self, center=center, **kwargs)
         self.width = config["frame_width"]
@@ -38,12 +34,6 @@ class MovingCamera(Camera):
         :class:`.MovingCameraScene`
 
     """
-
-    # CONFIG = {
-    #     "fixed_dimension": 0,  # width
-    #     "default_frame_stroke_color": WHITE,
-    #     "default_frame_stroke_width": 0,
-    # }
 
     def __init__(
         self,

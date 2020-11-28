@@ -18,15 +18,19 @@ Examples
 .. manim:: ChangingZoomScale
 
     class ChangingZoomScale(ZoomedScene):
-        CONFIG = {
-            "zoom_factor": 0.3,
-            "zoomed_display_height": 1,
-            "zoomed_display_width": 3,
-            "image_frame_stroke_width": 20,
-            "zoomed_camera_config": {
-                "default_frame_stroke_width": 3,
-            },
-        }
+        def __init__(self, **kwargs):
+            ZoomedScene.__init__(
+                self,
+                zoom_factor=0.3,
+                zoomed_display_height=1,
+                zoomed_display_width=3,
+                image_frame_stroke_width=20,
+                zoomed_camera_config={
+                    "default_frame_stroke_width": 3,
+                },
+                **kwargs
+            )
+
         def construct(self):
             dot = Dot().set_color(GREEN)
             sq = Circle(fill_opacity=1, radius=0.2).next_to(dot, RIGHT)
@@ -62,24 +66,6 @@ class ZoomedScene(MovingCameraScene):
     a particular part of the scene must be zoomed in on and displayed
     separately.
     """
-
-    # CONFIG = {
-    #     "camera_class": MultiCamera,
-    #     "zoomed_display_height": 3,
-    #     "zoomed_display_width": 3,
-    #     "zoomed_display_center": None,
-    #     "zoomed_display_corner": UP + RIGHT,
-    #     "zoomed_display_corner_buff": DEFAULT_MOBJECT_TO_EDGE_BUFFER,
-    #     "zoomed_camera_config": {
-    #         "default_frame_stroke_width": 2,
-    #         "background_opacity": 1,
-    #     },
-    #     "zoomed_camera_image_mobject_config": {},
-    #     "zoomed_camera_frame_starting_position": ORIGIN,
-    #     "zoom_factor": 0.15,
-    #     "image_frame_stroke_width": 3,
-    #     "zoom_activated": False,
-    # }
 
     def __init__(
         self,

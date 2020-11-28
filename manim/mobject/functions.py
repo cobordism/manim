@@ -119,10 +119,6 @@ class ParametricFunction(VMobject):
 
 
 class FunctionGraph(ParametricFunction):
-    # CONFIG = {
-    #     "color": YELLOW,
-    # }
-
     def __init__(self, function, color=YELLOW, **kwargs):
         self.x_min = -config["frame_x_radius"]
         self.x_max = config["frame_x_radius"]

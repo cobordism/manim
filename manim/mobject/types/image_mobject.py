@@ -29,10 +29,6 @@ class AbstractImageMobject(Mobject):
         This is a custom parameter of ImageMobject so that rendering a scene with e.g. the ``--quality low`` or ``--quality medium`` flag for faster rendering won't effect the position of the image on the screen.
     """
 
-    # CONFIG = {
-    #     "pixel_array_dtype": "uint8",
-    # }
-
     def __init__(self, scale_to_resolution, pixel_array_dtype="uint8", **kwargs):
         self.pixel_array_dtype = pixel_array_dtype
         self.scale_to_resolution = scale_to_resolution
@@ -87,11 +83,6 @@ class ImageMobject(AbstractImageMobject):
                 self.add(image)
 
     """
-
-    # CONFIG = {
-    #     "invert": False,
-    #     "image_mode": "RGBA",
-    # }
 
     def __init__(
         self,
@@ -201,14 +192,6 @@ class ImageMobject(AbstractImageMobject):
 
 
 class ImageMobjectFromCamera(AbstractImageMobject):
-    # CONFIG = {
-    #     "default_display_frame_config": {
-    #         "stroke_width": 3,
-    #         "stroke_color": WHITE,
-    #         "buff": 0,
-    #     }
-    # }
-
     def __init__(self, camera, default_display_frame_config=None, **kwargs):
         self.camera = camera
         if default_display_frame_config is None:

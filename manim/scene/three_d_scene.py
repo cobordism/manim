@@ -289,32 +289,6 @@ class SpecialThreeDScene(ThreeDScene):
 
     """
 
-    # CONFIG = {
-    #     "cut_axes_at_radius": True,
-    #     "camera_config": {"should_apply_shading": True, "exponential_projection": True},
-    #     "three_d_axes_config": {
-    #         "num_axis_pieces": 1,
-    #         "axis_config": {
-    #             "unit_size": 2,
-    #             "tick_frequency": 1,
-    #             "numbers_with_elongated_ticks": [0, 1, 2],
-    #             "stroke_width": 2,
-    #         },
-    #     },
-    #     "sphere_config": {"radius": 2, "resolution": (24, 48)},
-    #     "default_angled_camera_position": {
-    #         "phi": 70 * DEGREES,
-    #         "theta": -110 * DEGREES,
-    #     },
-    #     # When scene is extracted with -l flag, this
-    #     # configuration will override the above configuration.
-    #     "low_quality_config": {
-    #         "camera_config": {"should_apply_shading": False},
-    #         "three_d_axes_config": {"num_axis_pieces": 1},
-    #         "sphere_config": {"resolution": (12, 24)},
-    #     },
-    # }
-
     def __init__(
         self,
         cut_axes_at_radius=True,

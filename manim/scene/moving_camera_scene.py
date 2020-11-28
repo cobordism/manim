@@ -91,7 +91,6 @@ class MovingCameraScene(Scene):
         :class:`.MovingCamera`
     """
 
-    # CONFIG = {"camera_class": MovingCamera}
     def __init__(self, camera_class=MovingCamera, **kwargs):
         Scene.__init__(self, camera_class=camera_class, **kwargs)
 

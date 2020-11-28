@@ -7,12 +7,15 @@ Examples
     :save_last_frame:
 
     class FunctionPlotWithLabbeledYAxis(GraphScene):
-        CONFIG = {
-            "y_min": 0,
-            "y_max": 100,
-            "y_axis_config": {"tick_frequency": 10},
-            "y_labeled_nums": np.arange(0, 100, 10)
-        }
+        def __init__(self, **kwargs):
+            GraphScene.__init__(
+                self,
+                y_min=0,
+                y_max=100,
+                y_axis_config={"tick_frequency": 10},
+                y_labeled_nums=np.arange(0, 100, 10),
+                **kwargs
+            )
 
         def construct(self):
             self.setup_axes()
@@ -284,10 +287,13 @@ class GraphScene(Scene):
             :save_last_frame:
 
             class SequencePlot(GraphScene):
-                CONFIG = {
-                    "y_axis_label": r"Concentration [\%]",
-                    "x_axis_label": "Time [s]",
-                    }
+                def __init__(self, **kwargs):
+                    GraphScene.__init__(
+                        self,
+                        y_axis_label=r"Concentration [\%]",
+                        x_axis_label="Time [s]",
+                        **kwargs
+                    )
 
                 def construct(self):
                     data = [1, 2, 2, 4, 4, 1, 3]

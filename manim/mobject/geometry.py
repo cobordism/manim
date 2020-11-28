@@ -1297,12 +1297,6 @@ class ArrowTip(VMobject):
                 self.add(a00, a11, a12, a21, a22, a31, a32, b11, b12, b21)
 
     """
-    # CONFIG = {
-    #     "fill_opacity": 0,
-    #     "stroke_width": 3,
-    #     "length": DEFAULT_ARROW_TIP_LENGTH,
-    #     "start_angle": PI,
-    # }
 
     def __init__(self, *args, **kwargs):
         raise NotImplementedError("Has to be implemented in inheriting subclasses.")
@@ -1383,32 +1377,6 @@ class ArrowTip(VMobject):
 
         """
         return get_norm(self.vector)
-
-
-# class ArrowFilledTip(ArrowTip):
-#     r"""Base class for arrow tips with filled tip.
-
-#     Note
-#     ----
-#     In comparison to :class:`ArrowTip`, this class only provides
-#     different default settings for styling arrow tips. These settings
-#     (in particular `fill_opacity` and `stroke_width`) can also be
-#     overridden manually.
-
-#     See Also
-#     --------
-#     :class:`ArrowTip`
-#     :class:`ArrowTriangleFilledTip`
-#     :class:`ArrowCircleFilledTip`
-#     :class:`ArrowSquareFilledTip`
-
-#     """
-#     # CONFIG = {
-#     "fill_opacity": 1,
-#     "stroke_width": 0,
-#     "length": DEFAULT_ARROW_TIP_LENGTH,
-#     "start_angle": PI,
-# }
 
 
 class ArrowTriangleTip(ArrowTip, Triangle):
