@@ -191,7 +191,7 @@ class NumberLine(Line):
             direction = self.label_direction
         buff = buff or self.line_to_number_buff
 
-        print(number_config)
+        # print(number_config)
         num_mob = DecimalNumber(number, **number_config)
         num_mob.scale(scale_val)
         num_mob.next_to(self.number_to_point(number), direction=direction, buff=buff)
