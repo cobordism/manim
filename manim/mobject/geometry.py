@@ -1382,7 +1382,7 @@ class ArrowTip(VMobject):
         return angle_of_vector(self.vector)
 
     @property
-    def tip_length(self):
+    def length(self):
         r"""The length of the arrow tip.
 
         Examples
@@ -1390,7 +1390,7 @@ class ArrowTip(VMobject):
         ::
 
             >>> arrow = Arrow(np.array([0, 0, 0]), np.array([1, 2, 0]))
-            >>> round(arrow.tip.tip_length, 3)
+            >>> round(arrow.tip.length, 3)
             0.35
 
         """
@@ -1429,12 +1429,11 @@ class ArrowTriangleTip(ArrowTip, Triangle):
     def __init__(
         self,
         fill_opacity=0,
-        stroke_width=2,
+        stroke_width=3,
         length=DEFAULT_ARROW_TIP_LENGTH,
         start_angle=PI,
         **kwargs
     ):
-        self.length = length
         Triangle.__init__(
             self,
             fill_opacity=fill_opacity,
@@ -1442,8 +1441,8 @@ class ArrowTriangleTip(ArrowTip, Triangle):
             start_angle=start_angle,
             **kwargs
         )
-        self.set_width(self.length)
-        self.set_height(self.length, stretch=True)
+        self.set_width(length)
+        self.set_height(length, stretch=True)
 
 
 class ArrowTriangleFilledTip(ArrowTriangleTip):
@@ -1464,18 +1463,17 @@ class ArrowCircleTip(ArrowTip, Circle):
     def __init__(
         self,
         fill_opacity=0,
-        stroke_width=2,
+        stroke_width=3,
         length=DEFAULT_ARROW_TIP_LENGTH,
         start_angle=PI,
         **kwargs
     ):
-        self.length = length
         self.start_angle = start_angle
         Circle.__init__(
             self, fill_opacity=fill_opacity, stroke_width=stroke_width, **kwargs
         )
-        self.set_width(self.length)
-        self.set_height(self.length, stretch=True)
+        self.set_width(length)
+        self.set_height(length, stretch=True)
 
 
 class ArrowCircleFilledTip(ArrowCircleTip):
@@ -1493,22 +1491,21 @@ class ArrowSquareTip(ArrowTip, Square):
     def __init__(
         self,
         fill_opacity=0,
-        stroke_width=2,
+        stroke_width=3,
         length=DEFAULT_ARROW_TIP_LENGTH,
         start_angle=PI,
         **kwargs
     ):
-        self.length = length
         self.start_angle = start_angle
         Square.__init__(
             self,
             fill_opacity=fill_opacity,
             stroke_width=stroke_width,
-            side_length=self.length,
+            side_length=length,
             **kwargs
         )
-        self.set_width(self.length)
-        self.set_height(self.length, stretch=True)
+        self.set_width(length)
+        self.set_height(length, stretch=True)
 
 
 class ArrowSquareFilledTip(ArrowSquareTip):
